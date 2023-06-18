@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    background-color: #eeeeee;
+}
+
+.header {
+    background-color: white;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header .content {
+    width: 930px;
+    height: 55px;
+    padding: 10px;
+    margin: auto;
+}
+
+.header .title-p {
+    float: left;
+    font-size: 30px;
+    font-weight: bolder;
+    line-height: 55px;
+}
+
+.header .title-list {
+    float: right;
+}
+
+.header .title-list .layui-nav {
+    background-color: white;
+}
+
+.header .title-list .layui-nav a {
+    color: black;
+    font-size: 18px;
+}
+
+.header .title-list .layui-nav li :hover {
+    color: #16b777;
+}
+
+.header .title-list .layui-nav li:last-child {
+    color: black;
+}
+
+#glass {
+    color: black;
+    font-size: 25px;
+}
+.footer {
+    margin-top: 30px;
+    background-color: white;
+    box-shadow: 4px 4px 8px 8px rgba(0.2, 0.2, 0.2, 0.2);
+}
+
+.footer .content {
+    width: 930px;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    color: #808091;
+}
+.main .content {
+    width: 930px;
+    margin: auto;
+}
+.main .butn{
+    width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+}
+.main .layui-btn-warm{
+    float: right;
+}
+.main .layui-btn-normal{
+    margin-left: 25px;
+}
+.main .content .list{
+   
+    width: 920px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+.main .content .list:hover{
+    transform: scale(1.01,1.01);
+    box-shadow: 2px 6px 9px 3px rgba(0.1,0.3, 0.2, 0.4);
+}
+.main .content .list h2{
+    line-height: 50px;
+    color: #50505c;
+}
+.main .content .list h2:hover{
+    color: #1e9fff;
+    cursor: pointer;
+}
+.main .content .list p{
+    font-size: 17px;
+    color: #50505c;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.main .content .list .son{
+    padding: 10px;
+}
+.main .content .list .son span{
+    cursor: pointer;
+    margin-right: 30px;
+}
+.main .content .list .son .text{
+    cursor: pointer;
+    float: right;
+}
+.main .content .list .son a:hover{
+    color: #1e9fff;
+}
+.main .content .list .top{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+}
+.main .content .list .top .layui-icon-top{
+    font-size: 40px;
+    cursor: pointer;
+}

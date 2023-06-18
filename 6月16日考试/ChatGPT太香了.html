@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="程序员小明 | Java | Spring Boot | Spring Cloud | ElasticSearch |日常开发 |最新干货分享">
+    <meta name="description" content="Spring Boot, Spring Cloud,日常开发, ElasticSearch, 微服务, 并发编程, 源码分析,Java,程序员小明">
+    <meta name="author" content="小明">
+
+    <title>
+
+        ChatGPT太太太太太香了 |
+
+        程序员小明
+    </title>
+
+    <link rel="stylesheet" href="./列表.css">
+</head>
+
+
+<body>
+    <div class="progress-bar-container">
+
+
+
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+
+    </div>
+
+
+    <main class="page-container">
+
+
+
+        <div class="page-main-content">
+
+            <div class="page-main-content-top">
+
+                <header class="header-wrapper">
+
+                    <div class="header-content">
+                        <div class="left">
+
+                            <a class="logo-title" href="/">
+                                程序员小明
+                            </a>
+                        </div>
+
+                        <div class="right">
+                            <div class="pc">
+                                <ul class="menu-list">
+
+                                    <li class="menu-item">
+                                        <a class="" href="/">
+                                            首页
+                                        </a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a class="" href="/archives">
+                                            归档
+                                        </a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a class="" href="/tags">
+                                            标签
+                                        </a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a class="" href="/links">
+                                            友链
+                                        </a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a class="" href="/about">
+                                            关于
+                                        </a>
+                                    </li>
+
+
+                                    <li class="menu-item search search-popup-trigger">
+                                        <i class="fas fa-search"></i>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mobile">
+
+                                <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+
+                                <div class="icon-item menu-bar">
+                                    <div class="menu-bar-middle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="header-drawer">
+                        <ul class="drawer-menu-list">
+
+                            <li class="drawer-menu-item flex-center">
+                                <a class="" href="/">首页</a>
+                            </li>
+
+                            <li class="drawer-menu-item flex-center">
+                                <a class="" href="/archives">归档</a>
+                            </li>
+
+                            <li class="drawer-menu-item flex-center">
+                                <a class="" href="/tags">标签</a>
+                            </li>
+
+                            <li class="drawer-menu-item flex-center">
+                                <a class="" href="/links">友链</a>
+                            </li>
+
+                            <li class="drawer-menu-item flex-center">
+                                <a class="" href="/about">关于</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="window-mask"></div>
+
+                </header>
+
+
+            </div>
+
+            <div class="page-main-content-middle">
+
+                <div class="main-content">
+
+
+                    <div class="fade-in-down-animation">
+                        <div class="post-page-container">
+                            <div class="article-content-container">
+
+                                <div class="article-title">
+                                    <span class="title-hover-animation">ChatGPT太太太太太香了</span>
+                                </div>
+
+
+                                <div class="article-header">
+                                    <div class="avatar">
+                                        <img src="/images/avatar.png">
+                                    </div>
+                                    <div class="info">
+                                        <div class="author">
+                                            <span class="name">小明</span>
+
+                                            <span class="author-label">Lv5</span>
+
+                                        </div>
+                                        <div class="meta-info">
+
+                                            <div class="article-meta-info">
+                                                <span class="article-date article-meta-item">
+
+                                                    <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+
+                                                    <span class="pc">2023-03-28 11:40:23</span>
+                                                    <span class="mobile">2023-03-28 11:40</span>
+                                                </span>
+
+                                                <span class="article-update-date article-meta-item">
+                                                    <i class="fas fa-file-pen"></i>&nbsp;
+                                                    <span class="pc">2023-06-06 09:27:25</span>
+                                                </span>
+
+
+
+                                                <span class="article-tags article-meta-item">
+                                                    <i class="fas fa-tags"></i>&nbsp;
+                                                    <ul>
+
+                                                        <li>
+                                                            <a href="/tags/ChatGPT/">ChatGPT</a>&nbsp;
+                                                        </li>
+
+                                                    </ul>
+                                                </span>
+
+
+
+
+
+
+                                                <span class="article-pv article-meta-item">
+                                                    <i class="fas fa-eye"></i>&nbsp;<span
+                                                        id="busuanzi_value_page_pv"></span>
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="article-content keep-markdown-body">
+
+
+                                    <p>💡 我感觉以后再也不用某度了</p>
+                                    <span id="more"></span>
+                                    <h3 id="实际开发中一些让人眼前一亮的回答"><a href="#实际开发中一些让人眼前一亮的回答" class="headerlink"
+                                            title="实际开发中一些让人眼前一亮的回答"></a>实际开发中一些让人眼前一亮的回答</h3>
+                                    <h4 id="要将一个分支的某几次提交记录合并到另一个分支，可以使用-git-cherry-pick-命令"><a
+                                            href="#要将一个分支的某几次提交记录合并到另一个分支，可以使用-git-cherry-pick-命令" class="headerlink"
+                                            title="要将一个分支的某几次提交记录合并到另一个分支，可以使用 git cherry-pick 命令"></a>要将一个分支的某几次提交记录合并到另一个分支，可以使用
+                                        git cherry-pick 命令</h4>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">git cherry-pick &lt;commit-hash-1&gt; &lt;commit-hash-2&gt; ...</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+
+                                    <p>其中 <code>&lt;commit-hash-1&gt;</code>, <code>&lt;commit-hash-2&gt;</code>
+                                        等是你要合并的提交记录的哈希值。例如，如果你想将分支 <code>feature-branch</code> 上的提交记录
+                                        <code>abc123</code> 和 <code>def456</code> 合并到 <code>master</code> 分支上，可以运行以下命令：
+                                    </p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">git checkout master</span><br><span class="line">git cherry-pick abc123 def456</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+
+                                    <p>这将在 <code>master</code> 分支上创建两个新的提交记录，这些提交记录与 <code>feature-branch</code>
+                                        上的提交记录相同。请注意，如果这些提交记录与 <code>master</code> 分支上的其他提交记录有冲突，你需要解决这些冲突并手动提交合并结果。</p>
+                                    <p>另外，如果你想将整个分支合并到另一个分支上，可以使用 <code>git merge</code> 命令。例如，如果你想将
+                                        <code>feature-branch</code> 分支合并到 <code>master</code> 分支上，可以运行以下命令：
+                                    </p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">git checkout master</span><br><span class="line">git merge feature-branch</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+
+                                    <p>这将在 <code>master</code> 分支上创建一个新的合并提交记录，将 <code>feature-branch</code> 分支的所有更改合并到
+                                        <code>master</code> 分支上。
+                                    </p>
+                                    <h4 id="linux用命令行解析输出用括号括起来的参数日志，只需要第三个"><a href="#linux用命令行解析输出用括号括起来的参数日志，只需要第三个"
+                                            class="headerlink"
+                                            title="linux用命令行解析输出用括号括起来的参数日志，只需要第三个"></a>linux用命令行解析输出用括号括起来的参数日志，只需要第三个
+                                    </h4>
+                                    <p>假设日志文件的格式如下：</p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">[2022-01-01 12:00:00] INFO: This is a log message.</span><br><span class="line">[2022-01-01 12:01:00] ERROR: Something went wrong.</span><br><span class="line">[2022-01-01 12:02:00] DEBUG: Debugging information.</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+
+                                    <p>可以使用以下命令来获取括号中的字符：</p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">awk -F&#39;[][]&#39; &#39;&#123;print $2&#125;&#39; logfile.txt</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+
+                                    <p>这个命令使用方括号作为字段分隔符，然后打印第二个字段。由于方括号在awk中有特殊含义，因此需要使用反斜杠来转义它们。输出将是：</p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">2022-01-01 12:00:00</span><br><span class="line">2022-01-01 12:01:00</span><br><span class="line">2022-01-01 12:02:00</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+                                    <p>这些是日志中括号中的时间戳。如果你想获取括号中的其他内容，只需更改打印的字段编号即可。</p>
+                                    <h4 id="帮我用-java8-写一个处理list中某个字段相同值的统计，并从大到小排序"><a
+                                            href="#帮我用-java8-写一个处理list中某个字段相同值的统计，并从大到小排序" class="headerlink"
+                                            title="帮我用 java8 写一个处理list中某个字段相同值的统计，并从大到小排序"></a>帮我用 java8
+                                        写一个处理list中某个字段相同值的统计，并从大到小排序</h4><img lazyload alt="image"
+                                        data-src="https://img.mynamecoder.com/20230328113643.jpg">
+
+                                    <p>如果你想加入我的ChatGPT群，请关注微信公众号：程序员小明，回复<strong>ChatGPT</strong>拉你进群。</p>
+                                    <h3 id="关注微信公众号，获取更多资源"><a href="#关注微信公众号，获取更多资源" class="headerlink"
+                                            title="关注微信公众号，获取更多资源"></a>关注微信公众号，获取更多资源</h3><img lazyload alt="image"
+                                        data-src="https://img.mynamecoder.com/coderxm_qrcode.jpeg" width="200"
+                                        height="200" align="center">
+                                </div>
+
+
+                                <div class="post-copyright-info">
+
+                                    <div class="article-copyright-info-container">
+                                        <ul class="copyright-info-content">
+                                            <li class="post-title">
+                                                <span class="type">本文标题</span>：<span
+                                                    class="content">ChatGPT太太太太太香了</span>
+                                            </li>
+                                            <li class="post-author">
+                                                <span class="type">本文作者</span>：<span class="content">小明</span>
+                                            </li>
+                                            <li class="post-time">
+                                                <span class="type">创建时间</span>：<span class="content">2023-03-28
+                                                    11:40:23</span>
+                                            </li>
+                                            <li class="post-link">
+                                                <span class="type">本文链接</span>：<span class="content">p/62899.html</span>
+                                            </li>
+                                            <li class="post-license">
+                                                <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用
+                                                    <a class="license" target="_blank" rel="noopener"
+                                                        href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a>
+                                                    许可协议。转载请注明出处！</span>
+                                            </li>
+                                        </ul>
+                                        <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息"
+                                            data-offset-y="-2px">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <ul class="post-tags-box">
+
+                                    <li class="tag-item">
+                                        <a href="/tags/ChatGPT/">#ChatGPT</a>&nbsp;
+                                    </li>
+
+                                </ul>
+
+
+
+                                <div class="article-nav">
+
+                                    <div class="article-prev">
+                                        <a class="prev" rel="prev" href="/p/46554.html">
+                                            <span class="left arrow-icon flex-center">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </span>
+                                            <span class="title flex-center">
+                                                <span class="post-nav-title-item">Docx文档如何实现的自动编号？</span>
+                                                <span class="post-nav-item">上一篇</span>
+                                            </span>
+                                        </a>
+                                    </div>
+
+
+                                    <div class="article-next">
+                                        <a class="next" rel="next" href="/p/5013.html">
+                                            <span class="title flex-center">
+                                                <span class="post-nav-title-item">这年头，谁的好友列表还没有躺一个ChatGPT啊？</span>
+                                                <span class="post-nav-item">下一篇</span>
+                                            </span>
+                                            <span class="right arrow-icon flex-center">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="comment-container">
+
+                                    <div class="comments-container">
+                                        <div id="comments-anchor"></div>
+                                        <div class="comment-area-title">
+                                            <i class="fas fa-comments"></i>&nbsp;评论
+                                        </div>
+
+
+
+
+                                        <div class="valine-container">
+                                            <script data-pjax
+                                                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+                                            <div id="vcomments"></div>
+                                            <script data-pjax>
+                                                function loadValine() {
+
+                                                    const config = {
+                                                        el: '#vcomments',
+                                                        appId: 'RYD6fM3F1jQ4aTSXOzbclYi6-9Nh9j0Va',
+                                                        appKey: 'mjF7jJLYlbIcPU2mUOoh0I88',
+                                                        meta: ['nick', 'mail', 'link'],
+                                                        avatar: 'wavatar',
+                                                        enableQQ: true,
+                                                        placeholder: '说点什么',
+                                                        lang: 'zh-CN'.toLowerCase()
+                                                    }
+
+                                                    if ('') {
+                                                        config.serverURLs = ''
+                                                    }
+
+                                                    new Valine(config)
+
+                                                    function getAuthor(language) {
+                                                        switch (language) {
+                                                            case 'en':
+                                                                return 'Author'
+                                                            case 'zh-CN':
+                                                                return '博主'
+                                                            default:
+                                                                return 'Master'
+                                                        }
+                                                    }
+
+                                                    // Add "Author" identify
+                                                    const getValineDomTimer = setInterval(() => {
+                                                        const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
+                                                        if (vcards.length > 0) {
+                                                            let author = '小明'
+
+                                                            if (author) {
+                                                                for (let vcard of vcards) {
+                                                                    const vnick_dom = vcard.querySelector('.vhead .vnick')
+                                                                    const vnick = vnick_dom.innerHTML
+                                                                    if (vnick === author) {
+                                                                        vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                                                    }
+                                                                }
+                                                            }
+                                                            clearInterval(getValineDomTimer)
+                                                        } else {
+                                                            clearInterval(getValineDomTimer)
+                                                        }
+                                                    }, 2000)
+                                                }
+
+                                                if ('true' === 'true') {
+                                                    const loadValineTimeout = setTimeout(() => {
+                                                        loadValine()
+                                                        clearTimeout(loadValineTimeout)
+                                                    }, 1000)
+                                                } else {
+                                                    window.addEventListener('DOMContentLoaded', loadValine)
+                                                }
+                                            </script>
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="toc-content-container">
+                                <div class="post-toc-wrap">
+                                    <div class="post-toc">
+                                        <ol class="nav">
+                                            <li class="nav-item nav-level-3"><a class="nav-link"
+                                                    href="#%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E4%B8%AD%E4%B8%80%E4%BA%9B%E8%AE%A9%E4%BA%BA%E7%9C%BC%E5%89%8D%E4%B8%80%E4%BA%AE%E7%9A%84%E5%9B%9E%E7%AD%94"><span
+                                                        class="nav-text">实际开发中一些让人眼前一亮的回答</span></a>
+                                                <ol class="nav-child">
+                                                    <li class="nav-item nav-level-4"><a class="nav-link"
+                                                            href="#%E8%A6%81%E5%B0%86%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%E7%9A%84%E6%9F%90%E5%87%A0%E6%AC%A1%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95%E5%90%88%E5%B9%B6%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-git-cherry-pick-%E5%91%BD%E4%BB%A4"><span
+                                                                class="nav-text">要将一个分支的某几次提交记录合并到另一个分支，可以使用 git
+                                                                cherry-pick 命令</span></a></li>
+                                                    <li class="nav-item nav-level-4"><a class="nav-link"
+                                                            href="#linux%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90%E8%BE%93%E5%87%BA%E7%94%A8%E6%8B%AC%E5%8F%B7%E6%8B%AC%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%8F%82%E6%95%B0%E6%97%A5%E5%BF%97%EF%BC%8C%E5%8F%AA%E9%9C%80%E8%A6%81%E7%AC%AC%E4%B8%89%E4%B8%AA"><span
+                                                                class="nav-text">linux用命令行解析输出用括号括起来的参数日志，只需要第三个</span></a>
+                                                    </li>
+                                                    <li class="nav-item nav-level-4"><a class="nav-link"
+                                                            href="#%E5%B8%AE%E6%88%91%E7%94%A8-java8-%E5%86%99%E4%B8%80%E4%B8%AA%E5%A4%84%E7%90%86list%E4%B8%AD%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9B%B8%E5%90%8C%E5%80%BC%E7%9A%84%E7%BB%9F%E8%AE%A1%EF%BC%8C%E5%B9%B6%E4%BB%8E%E5%A4%A7%E5%88%B0%E5%B0%8F%E6%8E%92%E5%BA%8F"><span
+                                                                class="nav-text">帮我用 java8
+                                                                写一个处理list中某个字段相同值的统计，并从大到小排序</span></a></li>
+                                                </ol>
+                                            </li>
+                                            <li class="nav-item nav-level-3"><a class="nav-link"
+                                                    href="#%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%EF%BC%8C%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%9A%E8%B5%84%E6%BA%90"><span
+                                                        class="nav-text">关注微信公众号，获取更多资源</span></a></li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="page-main-content-bottom">
+
+                <footer class="footer">
+                    <div class="info-container">
+                        <div class="copyright-info info-item">
+                            &copy;
+
+                            <span>2018</span> -
+
+                            2023
+
+                            &nbsp;<i class="fas fa-heart icon-animate"></i>
+                            &nbsp;<a href="/">小明</a>
+
+                        </div>
+
+                        <script async data-pjax
+                            src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                        <div class="website-count info-item">
+
+                            访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+
+
+                            总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+
+                        </div>
+
+                        <div class="theme-info info-item">
+                            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a
+                                class="theme-version" target="_blank"
+                                href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+                        </div>
+
+                        <div class="icp-info info-item">
+                            <a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">
+                                京ICP备19029015号-1
+                            </a>
+                        </div>
+
+
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+
+        <div class="post-tools">
+            <div class="post-tools-container">
+                <ul class="tools-list">
+                    <!-- TOC aside toggle -->
+
+                    <li class="tools-item flex-center toggle-show-toc">
+                        <i class="fas fa-list"></i>
+                    </li>
+
+
+                    <!-- go comment -->
+
+                    <li class="tools-item flex-center go-to-comments">
+                        <i class="fas fa-comment"></i>
+                        <span class="post-comments-count"></span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="right-bottom-side-tools">
+            <div class="side-tools-container">
+                <ul class="side-tools-list">
+                    <li class="tools-item tool-font-adjust-plus flex-center">
+                        <i class="fas fa-search-plus"></i>
+                    </li>
+
+                    <li class="tools-item tool-font-adjust-minus flex-center">
+                        <i class="fas fa-search-minus"></i>
+                    </li>
+
+                    <li class="tools-item tool-dark-light-toggle flex-center">
+                        <i class="fas fa-moon"></i>
+                    </li>
+
+                    <!-- rss -->
+
+                    <li class="tools-item rss flex-center">
+                        <a class="flex-center" href="/atom.xml" target="_blank">
+                            <i class="fas fa-rss"></i>
+                        </a>
+                    </li>
+
+
+
+                    <li class="tools-item tool-scroll-to-top flex-center">
+                        <i class="fas fa-arrow-up"></i>
+                    </li>
+
+
+                    <li class="tools-item tool-scroll-to-bottom flex-center">
+                        <i class="fas fa-arrow-down"></i>
+                    </li>
+                </ul>
+
+                <ul class="exposed-tools-list">
+                    <li class="tools-item tool-toggle-show flex-center">
+                        <i class="fas fa-cog fa-spin"></i>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="zoom-in-image-mask">
+            <img class="zoom-in-image">
+        </div>
+
+
+
+        <div class="search-pop-overlay">
+            <div class="popup search-popup">
+                <div class="search-header">
+                    <span class="search-input-field-pre">
+                        <i class="fas fa-keyboard"></i>
+                    </span>
+                    <div class="search-input-container">
+                        <input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..."
+                            spellcheck="false" type="search" class="search-input">
+                    </div>
+                    <span class="close-popup-btn">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+                <div id="search-result">
+                    <div id="no-result">
+                        <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+
+
+    <script src="/js/utils.js"></script>
+
+    <script src="/js/main.js"></script>
+
+    <script src="/js/header-shrink.js"></script>
+
+    <script src="/js/back2top.js"></script>
+
+    <script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+    <script src="/js/lazyload.js"></script>
+
+
+
+    <div class="post-scripts pjax">
+
+
+        <script src="/js/post-helper.js"></script>
+
+
+
+        <script src="/js/libs/anime.min.js"></script>
+
+
+
+
+        <script src="/js/toc.js"></script>
+
+
+
+    </div>
+
+
+
+    <script src="/js/libs/pjax.min.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            window.pjax = new Pjax({
+                selectors: [
+                    'head title',
+                    '.page-container',
+                    '.pjax'
+                ],
+                history: true,
+                debug: false,
+                cacheBust: false,
+                timeout: 0,
+                analytics: false,
+                currentUrlFullReload: false,
+                scrollRestoration: false,
+                // scrollTo: true,
+            });
+
+            document.addEventListener('pjax:send', () => {
+                KEEP.utils.pjaxProgressBarStart();
+            });
+
+            document.addEventListener('pjax:complete', () => {
+                KEEP.utils.pjaxProgressBarEnd();
+                window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+                KEEP.refresh();
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
