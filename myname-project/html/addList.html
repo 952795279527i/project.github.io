@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/one.css" />
+    <link rel="stylesheet" href="../css/layui.css" />
+    <style type="text/css">
+      .tagcloud-content {
+        text-align: justify;
+      }
+      .page-container {
+        position: relative;
+        box-sizing: border-box;
+        width: 80%;
+        max-width: 928px;
+        height: 100%;
+      }
+      .page-container .page-main-content .page-main-content-middle {
+        display: flex;
+        justify-content: center;
+
+        box-sizing: border-box;
+        width: 100%;
+        padding: 38px 0;
+      }
+      .page-container .page-main-content {
+        position: relative;
+        box-sizing: border-box;
+        padding-top: 70px;
+      }
+      .page-container {
+        margin: 0 auto;
+        padding-top: 5%;
+      }
+      .page-main-content-bottom {
+        padding-top: 5%;
+      }
+      #add,#del{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="light-mode" inmaintabuse="1">
+    <main class="page-container">
+        <div class="page-main-content is-home">
+          <div class="page-main-content-top">
+            <header class="header-wrapper">
+              <div class="header-content">
+                <div class="left">
+                  <a class="logo-title" href="/" data-pjax-state="">
+                    程序员小明
+                  </a>
+                </div>
+
+                <div class="right">
+                  <div class="pc">
+                    <ul class="menu-list">
+                      <li class="menu-item">
+                        <a class="active" href="./index.html" data-pjax-state=""> 首页 </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="./addList.html" data-pjax-state="">
+                          添加
+                        </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="./label-con.html" data-pjax-state="">
+                          标签
+                        </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="/links" data-pjax-state=""> 友链 </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="/about" data-pjax-state=""> 关于 </a>
+                      </li>
+
+                      <li class="menu-item search search-popup-trigger">
+                        <i class="fas fa-search"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mobile">
+                    <div class="icon-item search search-popup-trigger">
+                      <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="icon-item menu-bar">
+                      <div class="menu-bar-middle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="page-main-content-middle">
+         <div class="main-content">
+            <form action="#">
+                <span>标题：</span><input type="text" class="titles"><br>
+                <span>简介：</span><textarea name="" id="" cols="30" rows="10" class="con"></textarea><br>
+                <span>标签：</span><select name="sec" id="">
+                </select>
+                <a id="add" href="./index.html">添加</a>
+                <a id="del" href="./index.html">取消</a>
+            </form>
+         </div>
+        </div>
+        </main>
+        <script src="../js/code.jquery.com_jquery-3.7.0.js"></script>
+        <script>
+           $(function(){
+            showList()
+           })
+           let list = [
+            "Centos",
+            "Charles",
+            "ChatGPT",
+            "DataGrip",
+             "Docker", 
+             "Docx", 
+             "Elasticsearch", 
+             "Freemarker", 
+             "Git", "Hexo", 
+             "Homebrew", 
+             "Iterm2", 
+             "Java", 
+             "Jenkins", 
+             "Kindle", 
+             "Linux", 
+             "Mac", 
+             "Mybatis", 
+             "Mysql", 
+             "Navicat" ,
+             "Nginx", 
+             "Python", 
+             "RocketMQ", 
+             "RocketMq", 
+             "Shell", 
+             "Spring", 
+             "SpringBoot", 
+             "Zsh", 
+             "cdn", 
+             "dev", 
+             "email", 
+             "exception", 
+             "maven", 
+             "mq", 
+             "redis", 
+             "swagger", 
+             "vue", 
+             "工具", 
+             "建站", 
+             "微信公众号", 
+             "支付", 
+             "日常", 
+             "算法", 
+             "面试"
+        ]
+        let arr = []
+           function showList(){
+            let html = "<option value='-1' selected>请选择标签</option>"
+            list.forEach((item,index)=>{
+                html += `
+                <option value="${index}">${item}</option>`
+            })
+            $("select[name='sec']").html(html)
+           }
+           $("#add").on("click",function(){
+            let Obj = {
+                title:$(".titles").val(),
+                desc:$(".con").val(),
+                tag:$("select[name='sec']").val(),
+                date:getdate()
+            }
+              function getdate() {
+            let date1 = new Date();
+            let week = date1.getDay();
+            let weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            return `${weeks[week]}`;
+        }
+           arr.push(Obj)
+           localStorage.setItem('arr', JSON.stringify(arr))
+           $(".titles").val("")
+           $(".con").val("")
+           $("select[name='sec']").val("")
+            console.log(arr);
+           })
+           $("#del").on("click",function(){
+            $(".titles").val("")
+           $(".con").val("")
+           $("select[name='sec']").val("")
+           })
+        </script>
+  </body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="keywords"
+      content="程序员小明 | Java | Spring Boot | Spring Cloud | ElasticSearch |日常开发 |最新干货分享"
+    />
+    <meta
+      name="description"
+      content="Spring Boot, Spring Cloud,日常开发, ElasticSearch, 微服务, 并发编程, 源码分析,Java,程序员小明"
+    />
+    <meta name="author" content="小明" />
+
+    <title>程序员小明</title>
+
+    <link rel="stylesheet" href="../css/one.css" />
+    <link rel="stylesheet" href="../css/layui.css" />
+    <style type="text/css">
+      #_copy {
+        align-items: center;
+        background: #4494d5;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        font-size: 13px;
+        height: 30px;
+        justify-content: center;
+        position: absolute;
+        width: 60px;
+        z-index: 1000;
+      }
+      #select-tooltip,
+      #sfModal,
+      .modal-backdrop,
+      div[id^="reader-helper"] {
+        display: none !important;
+      }
+      .modal-open {
+        overflow: auto !important;
+      }
+      ._sf_adjust_body {
+        padding-right: 0 !important;
+      }
+      .enable_copy_btns_div {
+        position: fixed;
+        width: 154px;
+        left: 10px;
+        top: 45%;
+        background: #e7f1ff;
+        border: 2px solid #4595d5;
+        font-weight: 600;
+        border-radius: 2px;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC,
+          Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial,
+          sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+        z-index: 5000;
+      }
+      .enable_copy_btns_logo {
+        width: 100%;
+        background: #4595d5;
+        text-align: center;
+        font-size: 12px;
+        color: #e7f1ff;
+        line-height: 30px;
+        height: 30px;
+      }
+      .enable_copy_btns_btn {
+        display: block;
+        width: 128px;
+        height: 28px;
+        background: #7f5711;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 12px;
+        border: 0;
+        outline: 0;
+        margin: 8px auto;
+        font-weight: 700;
+        cursor: pointer;
+        opacity: 0.9;
+      }
+      .enable_copy_btns_btn:hover {
+        opacity: 0.8;
+      }
+      .enable_copy_btns_btn:active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="../js/code.jquery.com_jquery-3.7.0.js"></script>
+    <body class="light-mode" inmaintabuse="1">
+      <div class="progress-bar-container">
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+      </div>
+
+      <main class="page-container">
+        <div class="page-main-content is-home">
+          <div class="page-main-content-top">
+            <header class="header-wrapper">
+              <div class="header-content">
+                <div class="left">
+                  <a class="logo-title" href="/" data-pjax-state="">
+                    程序员小明
+                  </a>
+                </div>
+
+                <div class="right">
+                  <div class="pc">
+                    <ul class="menu-list">
+                      <li class="menu-item">
+                        <a class="active" href="/" data-pjax-state=""> 首页 </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="/archives" data-pjax-state="">
+                          添加
+                        </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="./label-con.html" data-pjax-state="">
+                          标签
+                        </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="/links" data-pjax-state=""> 友链 </a>
+                      </li>
+
+                      <li class="menu-item">
+                        <a class="" href="/about" data-pjax-state=""> 关于 </a>
+                      </li>
+
+                      <li class="menu-item search search-popup-trigger">
+                        <i class="fas fa-search"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mobile">
+                    <div class="icon-item search search-popup-trigger">
+                      <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="icon-item menu-bar">
+                      <div class="menu-bar-middle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="header-drawer">
+                <ul class="drawer-menu-list">
+                  <li class="drawer-menu-item flex-center">
+                    <a class="active" href="/" data-pjax-state="">首页</a>
+                  </li>
+
+                  <li class="drawer-menu-item flex-center">
+                    <a class="" href="/archives" data-pjax-state="">归档</a>
+                  </li>
+
+                  <li class="drawer-menu-item flex-center">
+                    <a class="" href="/tags" data-pjax-state="">标签</a>
+                  </li>
+
+                  <li class="drawer-menu-item flex-center">
+                    <a class="" href="/links" data-pjax-state="">友链</a>
+                  </li>
+
+                  <li class="drawer-menu-item flex-center">
+                    <a class="" href="/about" data-pjax-state="">关于</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="window-mask"></div>
+            </header>
+          </div>
+          <div class="page-main-content-middle">
+            <div class="main-content">
+              <div class="home-content-container fade-in-down-animation">
+                <ul class="home-article-list">
+                  <li class="home-article-item">
+                    <h3 class="home-article-title">
+                      <a href="/p/990.html" data-pjax-state="">
+                        Java Spring Bean的生命周期
+                      </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                      Java Spring Bean的生命周期包括以下阶段：
+                      实例化：当Spring容器接收到创建Bean的请求时，它会使用Java反射机制创建一个Bean实例。
+                      属性赋值：在实例化Bean之后，Spring容器会将Bean的属性值注入到Bean实例中...
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+                      <div class="home-article-meta-info">
+                        <span>
+                          <i class="fas fa-history"></i>&nbsp;
+                          <span class="home-article-date">3 周前</span>
+                        </span>
+
+                        <span class="home-article-tag">
+                          <i class="fas fa-tags"></i>&nbsp;
+                          <ul>
+                            <li>
+                              <a href="/tags/Java/" data-pjax-state="">Java</a
+                              >&nbsp;
+                            </li>
+
+                            <li>
+                              |
+                              <a href="/tags/Spring/" data-pjax-state=""
+                                >Spring</a
+                              >&nbsp;
+                            </li>
+                          </ul>
+                        </span>
+                      </div>
+
+                      <a class="read-more" href="/p/990.html" data-pjax-state=""
+                        >阅读全文&<i>></i></a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="home-article-item">
+                    <h3 class="home-article-title">
+                      <a href="/p/30756.html" data-pjax-state="">
+                        自己感觉好用的工具列表
+                      </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                      <p>🔧 一句老话，工欲善其事，必先利其器</p>
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+                      <div class="home-article-meta-info">
+                        <span>
+                          <i class="fas fa-history"></i>&nbsp;
+                          <span class="home-article-date">1 个月前</span>
+                        </span>
+
+                        <span class="home-article-tag">
+                          <i class="fas fa-tags"></i>&nbsp;
+                          <ul>
+                            <li>
+                              <a
+                                href="/tags/%E5%B7%A5%E5%85%B7/"
+                                data-pjax-state=""
+                                >工具</a
+                              >&nbsp;
+                            </li>
+                          </ul>
+                        </span>
+                      </div>
+
+                      <a
+                        class="read-more"
+                        href="/p/30756.html"
+                        data-pjax-state=""
+                        >阅读全文<i>></i></a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="home-article-item">
+                    <h3 class="home-article-title">
+                      <a href="/p/46554.html" data-pjax-state="">
+                        Docx文档如何实现的自动编号？
+                      </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                      <p>📃 不得不佩服优秀软件的规范</p>
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+                      <div class="home-article-meta-info">
+                        <span>
+                          <i class="fas fa-history"></i>&nbsp;
+                          <span class="home-article-date">2 个月前</span>
+                        </span>
+
+                        <span class="home-article-category"
+                          ><i class="fas fa-folder"></i>&nbsp;
+                          <ul>
+                            <li>
+                              <a
+                                href="/categories/SpringBoot/"
+                                data-pjax-state=""
+                                >SpringBoot</a
+                              >&nbsp;
+                            </li>
+                          </ul>
+                        </span>
+
+                        <span class="home-article-tag">
+                          <i class="fas fa-tags"></i>&nbsp;
+                          <ul>
+                            <li>
+                              <a href="/tags/SpringBoot/" data-pjax-state=""
+                                >SpringBoot</a
+                              >&nbsp;
+                            </li>
+
+                            <li>
+                              |
+                              <a href="/tags/Freemarker/" data-pjax-state=""
+                                >Freemarker</a
+                              >&nbsp;
+                            </li>
+
+                            <li>
+                              |
+                              <a href="/tags/Docx/" data-pjax-state="">Docx</a
+                              >&nbsp;
+                            </li>
+                          </ul>
+                        </span>
+                      </div>
+
+                      <a
+                        class="read-more"
+                        href="/p/46554.html"
+                        data-pjax-state=""
+                        >阅读全文<i>></i></a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="home-article-item">
+                    <h3 class="home-article-title">
+                      <a href="/p/62899.html" data-pjax-state="">
+                        ChatGPT太太太太太香了
+                      </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                      <p>💡 我感觉以后再也不用某度了</p>
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+                      <div class="home-article-meta-info">
+                        <span>
+                          <i class="fas fa-history"></i>&nbsp;
+                          <span class="home-article-date">2 个月前</span>
+                        </span>
+
+                        <span class="home-article-tag">
+                          <i class="fas fa-tags"></i>&nbsp;
+                          <ul>
+                            <li>
+                              <a href="/tags/ChatGPT/" data-pjax-state=""
+                                >ChatGPT</a
+                              >&nbsp;
+                            </li>
+                          </ul>
+                        </span>
+                      </div>
+
+                      <a
+                        class="read-more"
+                        href="/p/62899.html"
+                        data-pjax-state=""
+                        >阅读全文<i>></i></a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="home-article-item">
+                    <h3 class="home-article-title">
+                      <a href="/p/5013.html" data-pjax-state="">
+                        这年头，谁的好友列表还没有躺一个ChatGPT啊？
+                      </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                      <p>🔥 你要是说这个，我可不困了</p>
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+                      <div class="home-article-meta-info">
+                        <span>
+                          <i class="fas fa-history"></i>&nbsp;
+                          <span class="home-article-date">3 个月前</span>
+                        </span>
+
+                        <span class="home-article-tag">
+                          <i class="fas fa-tags"></i>&nbsp;
+                          <ul>
+                            <li>
+                              <a href="/tags/ChatGPT/" data-pjax-state=""
+                                >ChatGPT</a
+                              >&nbsp;
+                            </li>
+                          </ul>
+                        </span>
+                      </div>
+
+                      <a
+                        class="read-more"
+                        href="/p/5013.html"
+                        data-pjax-state=""
+                        >阅读全文<i>></i></a
+                      >
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="home-paginator">
+                  <div class="paginator">
+                    <a class="prev btn" href="./index.html" data-pjax-state=""
+                      >上一页</a
+                    >
+
+                    <a class="next btn" href="./inedx2.html" data-pjax-state=""
+                      >下一页</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-main-content-bottom">
+            <footer class="footer">
+              <div class="info-container">
+                <div class="copyright-info info-item">
+                  ©
+                  <span>2018</span> - 2023 &nbsp;<i
+                    class="fas fa-heart icon-animate"
+                  ></i>
+                  &nbsp;<a href="/" data-pjax-state="">小明</a>
+                </div>
+
+                <script
+                  async=""
+                  data-pjax=""
+                  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+                ></script>
+                <div class="website-count info-item">
+                  访问人数&nbsp;<span id="busuanzi_value_site_uv">23815</span> 
+                  总访问量&nbsp;<span id="busuanzi_value_site_pv">28388</span>
+                </div>
+
+                <div class="theme-info info-item">
+                  由
+                  <a target="_blank" href="https://hexo.io" data-pjax-state=""
+                    >Hexo</a
+                  >
+                  驱动&nbsp;|&nbsp;主题&nbsp;<a
+                    class="theme-version"
+                    target="_blank"
+                    href="https://github.com/XPoet/hexo-theme-keep"
+                    data-pjax-state=""
+                    >Keep v3.6.1</a
+                  >
+                </div>
+
+                <div class="icp-info info-item">
+                  <a
+                    target="_blank"
+                    rel="nofollow"
+                    href="https://beian.miit.gov.cn"
+                    data-pjax-state=""
+                  >
+                    京ICP备19029015号-1
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+        <div class="right-bottom-side-tools">
+          <div class="side-tools-container">
+            <ul class="side-tools-list">
+              <li class="tools-item tool-font-adjust-plus flex-center">
+                <i class="fas fa-search-plus"></i>
+              </li>
+
+              <li class="tools-item tool-font-adjust-minus flex-center">
+                <i class="fas fa-search-minus"></i>
+              </li>
+
+              <li class="tools-item tool-dark-light-toggle flex-center">
+                <i class="fas fa-moon"></i>
+              </li>
+
+              <!-- rss -->
+
+              <li class="tools-item rss flex-center">
+                <a
+                  class="flex-center"
+                  href="/atom.xml"
+                  target="_blank"
+                  data-pjax-state=""
+                >
+                  <i class="fas fa-rss"></i>
+                </a>
+              </li>
+
+              <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+              </li>
+
+              <li class="tools-item tool-scroll-to-bottom flex-center">
+                <i class="fas fa-arrow-down"></i>
+              </li>
+            </ul>
+
+            <ul class="exposed-tools-list">
+              <li class="tools-item tool-toggle-show flex-center">
+                <i class="fas fa-cog fa-spin"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="zoom-in-image-mask">
+          <img class="zoom-in-image" />
+        </div>
+
+        <div class="search-pop-overlay">
+          <div class="popup search-popup">
+            <div class="search-header">
+              <span class="search-input-field-pre">
+                <i class="fas fa-keyboard"></i>
+              </span>
+              <div class="search-input-container">
+                <input
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  placeholder="搜索..."
+                  spellcheck="false"
+                  type="search"
+                  class="search-input"
+                />
+              </div>
+              <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+              </span>
+            </div>
+            <div id="search-result">
+              <div id="no-result"><i class="fas fa-search fa-5x"></i></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+        <div id="fatkun-drop-panel-inner">
+          <div class="fatkun-content">
+            <svg
+              class="fatkun-icon"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="5892"
+            >
+              <path
+                d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z"
+                p-id="5893"
+              ></path>
+            </svg>
+            <div class="fatkun-title">拖拽到此处</div>
+            <div class="fatkun-desc">图片将完成下载</div>
+          </div>
+          <div id="fatkun-supported-by">
+            由AIX智能下载器(图片/视频/音乐/文档)提供
+          </div>
+        </div>
+      </div>
+      <script src="../js/content.js"></script>
+    </body>
+  </body>
+</html>
